@@ -78,21 +78,21 @@ export function MobilitySection() {
           </div>
 
           <div className={`grid gap-3 sm:gap-4 ${contentInView ? 'animate-fade-in-right stagger-2' : 'opacity-0'}`}>
-            <div className="relative aspect-video rounded-xl md:rounded-2xl overflow-hidden shadow-lg">
+            <div className="relative aspect-video rounded-xl md:rounded-2xl overflow-hidden shadow-lg bg-gray-100">
               <Image
-                src="/images/professional-driver.jpg"
-                alt="Professional Ride-Along driver"
+                src="/images/ride-yellow-car.jpeg"
+                alt="Ride-Along electric vehicle"
                 fill
-                className="object-cover transition-transform duration-700 hover:scale-105"
+                className="object-contain transition-transform duration-700 hover:scale-105"
               />
             </div>
             <div className="grid grid-cols-2 gap-3 sm:gap-4">
-              <div className="relative aspect-square rounded-lg md:rounded-xl overflow-hidden shadow-md bg-gray-100">
+              <div className="relative aspect-square rounded-lg md:rounded-xl overflow-hidden shadow-md">
                 <Image
-                  src="/images/ride-yellow-car.jpeg"
-                  alt="Ride-Along electric vehicle"
+                  src="/images/professional-driver.jpg"
+                  alt="Professional Ride-Along driver"
                   fill
-                  className="object-contain transition-transform duration-500 hover:scale-105"
+                  className="object-cover transition-transform duration-500 hover:scale-105"
                 />
               </div>
               <div className="relative aspect-square rounded-lg md:rounded-xl overflow-hidden shadow-md">
