@@ -89,8 +89,8 @@ export function MobilitySection() {
             <div className="grid grid-cols-2 gap-3 sm:gap-4">
               <div className="relative aspect-square rounded-lg md:rounded-xl overflow-hidden shadow-md">
                 <Image
-                  src="/images/ev-fleet.jpg"
-                  alt="Electric vehicle fleet"
+                  src="/images/ride-yellow-car.jpg"
+                  alt="Ride-Along electric vehicle"
                   fill
                   className="object-cover transition-transform duration-500 hover:scale-105"
                 />
