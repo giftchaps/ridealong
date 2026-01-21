@@ -16,21 +16,26 @@ export async function POST(request: Request) {
     // Validate the request body
     const validatedData: ContactFormData = contactFormSchema.parse(body)
 
-    // TODO: Implement email sending here
-    // You can integrate with services like:
-    // - SendGrid (recommended)
-    // - Mailgun
-    // - AWS SES
-    // - Resend
-    // - Node.js nodemailer
-    
-    console.log('Contact form submission:', validatedData)
+    // Send to Formspree (free email service)
+    const formspreeResponse = await fetch('https://formspree.io/f/xyzgbwvd', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: validatedData.name,
+        email: validatedData.email,
+        subject: validatedData.subject,
+        message: validatedData.message,
+      }),
+    })
 
-    // Placeholder response - replace with actual email sending logic
+    if (!formspreeResponse.ok) {
+      throw new Error('Failed to send email')
+    }
+
     return Response.json(
       {
         success: true,
-        message: 'Your message has been received. We will get back to you soon!',
+        message: 'Your message has been sent successfully! We will get back to you soon.',
       },
       { status: 200 }
     )

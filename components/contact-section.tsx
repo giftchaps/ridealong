@@ -29,6 +29,48 @@ const contactInfo = [
 export function ContactSection() {
   const { ref: contentRef, isInView: contentInView } = useInView()
   const { ref: formRef, isInView: formInView } = useInView()
+  const [isLoading, setIsLoading] = useState(false)
+  const [successMessage, setSuccessMessage] = useState('')
+  const [errorMessage, setErrorMessage] = useState('')
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsLoading(true)
+    setSuccessMessage('')
+    setErrorMessage('')
+
+    const formData = new FormData(e.currentTarget)
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      subject: formData.get('subject'),
+      message: formData.get('message'),
+    }
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
+
+      const result = await response.json()
+
+      if (!response.ok) {
+        throw new Error(result.message || 'Failed to send message')
+      }
+
+      setSuccessMessage(result.message)
+      e.currentTarget.reset()
+      
+      // Clear success message after 5 seconds
+      setTimeout(() => setSuccessMessage(''), 5000)
+    } catch (error) {
+      setErrorMessage(error instanceof Error ? error.message : 'An error occurred')
+    } finally {
+      setIsLoading(false)
+    }
+  }
 
   return (
     <section id="contact" className="py-16 md:py-20 lg:py-32 bg-secondary">
@@ -77,7 +119,19 @@ export function ContactSection() {
             className={`bg-card border border-border rounded-xl md:rounded-2xl p-6 sm:p-8 lg:p-10 transition-all duration-500 ${formInView ? 'animate-fade-in-right stagger-2' : 'opacity-0'}`}
           >
             <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-5 sm:mb-6">Send us a message</h3>
-            <form className="space-y-4 sm:space-y-5">
+            {successMessage && (
+              <Alert className="mb-4 border-green-200 bg-green-50">
+                <CheckCircle className="h-4 w-4 text-green-600" />
+                <AlertDescription className="text-green-800">{successMessage}</AlertDescription>
+              </Alert>
+            )}
+            {errorMessage && (
+              <Alert className="mb-4 border-red-200 bg-red-50">
+                <AlertCircle className="h-4 w-4 text-red-600" />
+                <AlertDescription className="text-red-800">{errorMessage}</AlertDescription>
+              </Alert>
+            )}
+            <form className="space-y-4 sm:space-y-5" onSubmit={handleSubmit}>
               <div className="grid gap-4 sm:gap-5 sm:grid-cols-2">
                 <div>
                   <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-foreground mb-1.5 sm:mb-2">
@@ -128,9 +182,13 @@ export function ContactSection() {
                   placeholder="Tell us about your project..."
                 />
               </div>
-              <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 transition-all duration-300 hover:scale-[1.02]">
-                Send Message
-                <ArrowRight className="ml-2 h-4 w-4" />
+              <Button 
+                type="submit" 
+                disabled={isLoading}
+                className="w-full bg-accent text-accent-foreground hover:bg-accent/90 transition-all duration-300 hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isLoading ? 'Sending...' : 'Send Message'}
+                {!isLoading && <ArrowRight className="ml-2 h-4 w-4" />}
               </Button>
             </form>
           </div>
