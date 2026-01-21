@@ -125,7 +125,7 @@ export function ContactSection() {
                 <AlertDescription className="text-red-800">{errorMessage}</AlertDescription>
               </Alert>
             )}
-            <form className="space-y-4 sm:space-y-5" onSubmit={handleSubmit}>
+            <form className="space-y-4 sm:space-y-5" action="https://formspree.io/f/mgoodjwy" method="POST">
               <div className="grid gap-4 sm:gap-5 sm:grid-cols-2">
                 <div>
                   <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-foreground mb-1.5 sm:mb-2">
@@ -135,6 +135,7 @@ export function ContactSection() {
                     type="text"
                     id="name"
                     name="name"
+                    required
                     className="w-full rounded-lg border border-input bg-background px-3 sm:px-4 py-2 sm:py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-all duration-300"
                     placeholder="Your name"
                   />
@@ -147,6 +148,7 @@ export function ContactSection() {
                     type="email"
                     id="email"
                     name="email"
+                    required
                     className="w-full rounded-lg border border-input bg-background px-3 sm:px-4 py-2 sm:py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-all duration-300"
                     placeholder="you@company.com"
                   />
@@ -172,6 +174,7 @@ export function ContactSection() {
                   id="message"
                   name="message"
                   rows={4}
+                  required
                   className="w-full rounded-lg border border-input bg-background px-3 sm:px-4 py-2 sm:py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent resize-none transition-all duration-300"
                   placeholder="Tell us about your project..."
                 />
