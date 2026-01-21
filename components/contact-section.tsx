@@ -147,19 +147,8 @@ export function ContactSection() {
                   rows={4}
                   required
                   className="w-full rounded-lg border border-input bg-background px-3 sm:px-4 py-2 sm:py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent resize-none transition-all duration-300"
-                  placeholder="Tell us about your project..."
+                  placeholder="Please include your name and tell us about your project..."
                 ></textarea>
-              </div>
-              <div>
-                <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-foreground mb-1.5 sm:mb-2">
-                  Your name:
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  className="w-full rounded-lg border border-input bg-background px-3 sm:px-4 py-2 sm:py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-all duration-300"
-                  placeholder="Your name"
-                />
               </div>
               <Button 
                 type="submit" 
