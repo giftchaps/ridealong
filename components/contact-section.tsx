@@ -127,25 +127,11 @@ export function ContactSection() {
             )}
             <form className="space-y-4 sm:space-y-5" action="https://formspree.io/f/mgoodjwy" method="POST">
               <div>
-                <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-foreground mb-1.5 sm:mb-2">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  className="w-full rounded-lg border border-input bg-background px-3 sm:px-4 py-2 sm:py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-all duration-300"
-                  placeholder="Your name"
-                />
-              </div>
-              <div>
                 <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-foreground mb-1.5 sm:mb-2">
-                  Email
+                  Your email:
                 </label>
                 <input
                   type="email"
-                  id="email"
                   name="email"
                   required
                   className="w-full rounded-lg border border-input bg-background px-3 sm:px-4 py-2 sm:py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-all duration-300"
@@ -154,15 +140,25 @@ export function ContactSection() {
               </div>
               <div>
                 <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-foreground mb-1.5 sm:mb-2">
-                  Message
+                  Your message:
                 </label>
                 <textarea
-                  id="message"
                   name="message"
                   rows={4}
                   required
                   className="w-full rounded-lg border border-input bg-background px-3 sm:px-4 py-2 sm:py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent resize-none transition-all duration-300"
                   placeholder="Tell us about your project..."
+                ></textarea>
+              </div>
+              <div>
+                <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-foreground mb-1.5 sm:mb-2">
+                  Your name:
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  className="w-full rounded-lg border border-input bg-background px-3 sm:px-4 py-2 sm:py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-all duration-300"
+                  placeholder="Your name"
                 />
               </div>
               <Button 
