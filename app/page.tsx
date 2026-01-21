@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_ZA',
-    url: 'https://ride.co.zw',
+    url: 'https://www.your-ride-now.com',
     siteName: 'Ride Along Software Services',
     title: 'Ride Along Software Services | Custom Software & Electric Mobility',
     description: 'Southern African technology company delivering custom software solutions and sustainable electric mobility services.',
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     images: ['/images/og-image.png'],
   },
   alternates: {
-    canonical: 'https://ride.co.zw',
+    canonical: 'https://www.your-ride-now.com',
   },
 }
 
