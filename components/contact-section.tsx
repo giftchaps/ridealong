@@ -126,6 +126,8 @@ export function ContactSection() {
               </Alert>
             )}
             <form className="space-y-4 sm:space-y-5" action="https://formspree.io/f/mgoodjwy" method="POST">
+              <input type="hidden" name="_subject" value="New contact form submission" />
+              <input type="hidden" name="_next" value="https://www.your-ride-now.com" />
               <div className="grid gap-4 sm:gap-5 sm:grid-cols-2">
                 <div>
                   <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-foreground mb-1.5 sm:mb-2">
