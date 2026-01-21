@@ -40,33 +40,27 @@ export function ContactSection() {
     setErrorMessage('')
 
     const formData = new FormData(e.currentTarget)
-    const data = {
-      name: formData.get('name'),
-      email: formData.get('email'),
-      subject: formData.get('subject'),
-      message: formData.get('message'),
-    }
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://formspree.io/f/mgoodjwy', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
       })
 
-      const result = await response.json()
-
-      if (!response.ok) {
-        throw new Error(result.message || 'Failed to send message')
+      if (response.ok) {
+        setSuccessMessage('Thank you! Your message has been sent successfully.')
+        e.currentTarget.reset()
+        
+        // Clear success message after 5 seconds
+        setTimeout(() => setSuccessMessage(''), 5000)
+      } else {
+        throw new Error('Failed to send message')
       }
-
-      setSuccessMessage(result.message)
-      e.currentTarget.reset()
-      
-      // Clear success message after 5 seconds
-      setTimeout(() => setSuccessMessage(''), 5000)
     } catch (error) {
-      setErrorMessage(error instanceof Error ? error.message : 'An error occurred')
+      setErrorMessage('Sorry, there was an error sending your message. Please try again.')
     } finally {
       setIsLoading(false)
     }
