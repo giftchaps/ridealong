@@ -86,12 +86,47 @@ export function WhyUsSection() {
             </div>
 
             <div className="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-border">
-              <p className="text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4">Trusted by partners including:</p>
-              <div className="flex flex-wrap gap-2 sm:gap-3 text-[10px] sm:text-xs text-muted-foreground">
-                <span className="bg-muted px-2 sm:px-3 py-1 sm:py-1.5 rounded transition-colors duration-300 hover:bg-accent hover:text-accent-foreground">Silandela Investment Group</span>
-                <span className="bg-muted px-2 sm:px-3 py-1 sm:py-1.5 rounded transition-colors duration-300 hover:bg-accent hover:text-accent-foreground">Seke Energy Limited</span>
-                <span className="bg-muted px-2 sm:px-3 py-1 sm:py-1.5 rounded transition-colors duration-300 hover:bg-accent hover:text-accent-foreground">Avis Fleet Management</span>
-                <span className="bg-muted px-2 sm:px-3 py-1 sm:py-1.5 rounded transition-colors duration-300 hover:bg-accent hover:text-accent-foreground">Diskava Communications</span>
+              <div className="text-center mb-6 sm:mb-8">
+                <p className="text-sm sm:text-base font-medium text-foreground mb-2">Trusted by Industry Leaders</p>
+                <p className="text-xs sm:text-sm text-muted-foreground">Partnering with established organizations across Southern Africa</p>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-4 sm:gap-6">
+                <div className="group bg-background border border-border rounded-lg p-3 sm:p-4 transition-all duration-300 hover:border-accent hover:shadow-md">
+                  <div className="flex items-center justify-center h-8 sm:h-10 mb-2 sm:mb-3">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
+                      <span className="text-white font-bold text-xs sm:text-sm">SI</span>
+                    </div>
+                  </div>
+                  <p className="text-xs sm:text-sm font-medium text-foreground text-center group-hover:text-accent transition-colors">Silandela Investment Group</p>
+                </div>
+                
+                <div className="group bg-background border border-border rounded-lg p-3 sm:p-4 transition-all duration-300 hover:border-accent hover:shadow-md">
+                  <div className="flex items-center justify-center h-8 sm:h-10 mb-2 sm:mb-3">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center">
+                      <span className="text-white font-bold text-xs sm:text-sm">SE</span>
+                    </div>
+                  </div>
+                  <p className="text-xs sm:text-sm font-medium text-foreground text-center group-hover:text-accent transition-colors">Seke Energy Limited</p>
+                </div>
+                
+                <div className="group bg-background border border-border rounded-lg p-3 sm:p-4 transition-all duration-300 hover:border-accent hover:shadow-md">
+                  <div className="flex items-center justify-center h-8 sm:h-10 mb-2 sm:mb-3">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center">
+                      <span className="text-white font-bold text-xs sm:text-sm">AF</span>
+                    </div>
+                  </div>
+                  <p className="text-xs sm:text-sm font-medium text-foreground text-center group-hover:text-accent transition-colors">Avis Fleet Management</p>
+                </div>
+                
+                <div className="group bg-background border border-border rounded-lg p-3 sm:p-4 transition-all duration-300 hover:border-accent hover:shadow-md">
+                  <div className="flex items-center justify-center h-8 sm:h-10 mb-2 sm:mb-3">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center">
+                      <span className="text-white font-bold text-xs sm:text-sm">DC</span>
+                    </div>
+                  </div>
+                  <p className="text-xs sm:text-sm font-medium text-foreground text-center group-hover:text-accent transition-colors">Diskava Communications</p>
+                </div>
               </div>
             </div>
           </div>
