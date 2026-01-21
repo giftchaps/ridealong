@@ -129,38 +129,49 @@ export function ContactSection() {
               <div className="grid gap-4 sm:gap-5 sm:grid-cols-2">
                 <div>
                   <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-foreground mb-1.5 sm:mb-2">
-                    Name
+                    Full Name
                   </label>
                   <input
                     type="text"
                     name="name"
                     className="w-full rounded-lg border border-input bg-background px-3 sm:px-4 py-2 sm:py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-all duration-300"
-                    placeholder="Your name"
+                    placeholder="Enter your full name"
                   />
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-foreground mb-1.5 sm:mb-2">
-                    Email
+                    Email Address *
                   </label>
                   <input
                     type="email"
                     name="email"
                     required
                     className="w-full rounded-lg border border-input bg-background px-3 sm:px-4 py-2 sm:py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-all duration-300"
-                    placeholder="you@company.com"
+                    placeholder="your.email@company.com"
                   />
                 </div>
               </div>
               <div>
+                <label htmlFor="subject" className="block text-xs sm:text-sm font-medium text-foreground mb-1.5 sm:mb-2">
+                  Subject
+                </label>
+                <input
+                  type="text"
+                  name="subject"
+                  className="w-full rounded-lg border border-input bg-background px-3 sm:px-4 py-2 sm:py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-all duration-300"
+                  placeholder="What can we help you with?"
+                />
+              </div>
+              <div>
                 <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-foreground mb-1.5 sm:mb-2">
-                  Message
+                  Message *
                 </label>
                 <textarea
                   name="message"
                   rows={4}
                   required
                   className="w-full rounded-lg border border-input bg-background px-3 sm:px-4 py-2 sm:py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent resize-none transition-all duration-300"
-                  placeholder="Tell us about your project..."
+                  placeholder="Please describe your project or inquiry in detail..."
                 ></textarea>
               </div>
               <Button 
