@@ -21,8 +21,8 @@ const contactInfo = [
   {
     icon: Globe,
     label: "Website",
-    value: "ride.co.zw",
-    href: "https://www.ride.co.zw",
+    value: "www.your-ride-now.com",
+    href: "https://www.your-ride-now.com",
   },
 ]
 
