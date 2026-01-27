@@ -1,12 +1,10 @@
-import { MetadataRoute } from 'next'
-
-export default function sitemap(): MetadataRoute.Sitemap {
+export default function sitemap() {
   return [
     {
       url: 'https://www.your-ride-now.com',
-      lastModified: new Date(),
+      lastModified: new Date().toISOString(),
       changeFrequency: 'weekly',
-      priority: 1,
+      priority: 1.0,
     },
   ]
 }
