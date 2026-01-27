@@ -1,15 +1,16 @@
-# Ride Along Software Services Robots.txt
 User-agent: *
 Allow: /
+
+# Sitemap
+Sitemap: https://www.your-ride-now.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Disallow admin areas (if any)
+Disallow: /admin/
 Disallow: /api/
-Disallow: /.next/
 
-# Specific rules for search engines
-User-agent: Googlebot
+# Allow important pages
 Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-# Sitemap location
-Sitemap: https://ride.co.zw/sitemap.xml
+Allow: /sitemap.xml
